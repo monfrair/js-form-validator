@@ -5,16 +5,22 @@ const messageContainer = document.querySelector('.message-container');
 const message = document.getElementById('message');
 
 let isValidated = false;
+let passwordsMatch = false;
 
 function validateForm() {
-	// check validity
+	// Using Constrait API
 	isValid = form.checkValidity();
+	// style main message for an error
+	if (!isValid) {
+		message.textContent = 'Please fill out all fields on the form.';
+		message.style.color = 'red';
+		messageContainer.style.borderColor = 'red';
+	}
 	console.log(isValid);
-
-	// style message for any errors
-	message.textContent = 'Please fill out all fields on the form.';
-	message.style.color = 'red';
-	messageContainer.style.borderColor = 'red';
+	// check to see if passwords match
+	if (password1EL.value === password2EL.value) {
+		passwordsMatch = true;
+	}
 }
 
 function processFormData(e) {
