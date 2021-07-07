@@ -20,6 +20,15 @@ function validateForm() {
 	// check to see if passwords match
 	if (password1EL.value === password2EL.value) {
 		passwordsMatch = true;
+		password1EL.style.borderColor = 'green';
+		password2EL.style.borderColor = 'green';
+	} else {
+		passwordsMatch = false;
+		message.textContent = 'Make sure your passwords match.';
+		message.style.color = 'red';
+		messageContainer.style.borderColor = 'red';
+		password1EL.style.borderColor = 'red';
+		password2EL.style.borderColor = 'red';
 	}
 }
 
